@@ -1,0 +1,41 @@
+Id,Nom,Bibliothèque de formes,ID de page,Contenu par,Groupe,Source de la ligne,Destination de la ligne,Source de la flèche,Destination de la flèche,Zone de texte 1
+1,Page,,,,,,,,,Page 1
+2,Rectangle,Formes géométriques,1,,,,,,,
+3,Terminateur,Formes des organigrammes,1,,,,,,,Initialisation du programme
+4,Décision,Formes des organigrammes,1,,,,,,,Choix du potentiel
+5,Saisie manuelle,Formes des organigrammes,1,,,,,,,Parabolique
+6,Saisie manuelle,Formes des organigrammes,1,,,,,,,Linéaire
+7,Saisie manuelle,Formes des organigrammes,1,,,,,,,Carré
+8,Saisie manuelle,Formes des organigrammes,1,,,,,,,Demi- parabolique
+9,Saisie manuelle,Formes des organigrammes,1,,,,,,,Gaussien
+10,Décision,Formes des organigrammes,1,,,,,,,Choix des caractéristiques du potentiel
+11,Saisie manuelle,Formes des organigrammes,1,,,,,,,Largeur du potentiel
+12,Saisie manuelle,Formes des organigrammes,1,,,,,,,Valeur maximale du potentiel
+13,Saisie manuelle,Formes des organigrammes,1,,,,,,,Valeur de  l'énergie de la particule
+14,Processus,Formes des organigrammes,1,,,,,,,Vecteur d'onde
+15,Processus,Formes des organigrammes,1,,,,,,,Parties réelle et imaginaire de la fonction d'onde (f.o.)
+16,Processus,Formes des organigrammes,1,,,,,,,Parties réelle et imaginaire de la dérivée de la f.o.
+17,Processus,Formes des organigrammes,1,,,,,,,Position initiale : x = infini
+18,Terminateur,Formes des organigrammes,1,,,,,,,Début du calcul de R et T
+19,Texte,Standard,1,,,,,,,"Calcul des
+conditions
+initiales"
+20,Ligne,,1,,,3,4,None,Arrow,
+21,Ligne,,1,,,4,7,None,Arrow,
+22,Ligne,,1,,,4,6,None,Arrow,
+23,Ligne,,1,,,4,5,None,Arrow,
+24,Ligne,,1,,,4,8,None,Arrow,
+25,Ligne,,1,,,4,9,None,Arrow,
+26,Ligne,,1,,,7,10,None,Arrow,
+27,Ligne,,1,,,6,10,None,Arrow,
+28,Ligne,,1,,,5,10,None,Arrow,
+29,Ligne,,1,,,8,10,None,Arrow,
+30,Ligne,,1,,,9,10,None,Arrow,
+31,Ligne,,1,,,10,11,None,Arrow,
+32,Ligne,,1,,,11,12,None,Arrow,
+33,Ligne,,1,,,12,13,None,Arrow,
+34,Ligne,,1,,,14,17,None,Arrow,
+35,Ligne,,1,,,17,15,None,Arrow,
+36,Ligne,,1,,,15,16,None,Arrow,
+37,Ligne,,1,,,13,14,None,Arrow,
+38,Ligne,,1,,,16,18,None,Arrow,

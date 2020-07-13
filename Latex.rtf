@@ -1,0 +1,955 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \\documentclass\{article\}\
+\\usepackage[utf8]\{inputenc\}\
+\
+\\documentclass\{article\}\
+\\usepackage[utf8]\{inputenc\}\
+\
+\\usepackage\{comment\}\
+\\usepackage\{amsfonts\}\
+\\usepackage[french]\{babel\}\
+\\usepackage[T1]\{fontenc\}\
+\
+\\usepackage\{float\}\
+\\usepackage\{amsmath\}\
+\\usepackage\{appendix\}\
+\\usepackage\{amssymb\}\
+\\usepackage[backend=biber,\
+style=numeric,\
+sorting=ynt]\{biblatex\}\
+\\usepackage[nottoc]\{tocbibind\}\
+\
+\\usepackage\{graphicx\}\
+\\graphicspath\{ \{./images/\} \}\
+\
+\\addbibresource\{bibliographie.bib\}\
+\
+\
+\\title\{Oscillateur harmonique \'e0 une dimension\}\
+\\author\{Cl\'e9ment Lotteau \}\
+\\date\{May 2020\}\
+\
+\
+\
+\
+\
+\
+\\begin\{document\}\
+\
+\\maketitle\
+\
+\\begin\{abstract\}\
+\\end\{abstract\}\
+\
+\\newpage\
+\\tableofcontents\
+\\newpage\
+\
+\\section\{Introduction\}\
+\\section\{Rappels th\'e9oriques sur l'oscillateur harmonique \'e0 1 dimension\}\
+On cherche \'e0 trouver une solution analytique de l'\'e9quation de Schr\'f6dinger pour un oscillateur harmonique \'e0 une dimension\\footnote\{\\cite\{cohen\}\}. On rappelle quelques notions. Equation de Schr\'f6dinger ind\'e9pendante du temps :\
+\\begin\{equation\} \\label\{schro_indep\}\
+H|\\psi\\rangle = E|\\psi\\rangle\
+\\end\{equation\}\
+o\'f9 H est l'op\'e9rateur hamiltonien, et E l'\'e9nergie de l'\'e9tat quantique \\begin\{math\}|\\psi\\rangle\
+\\end\{math\}. \'c0 une dimension pour un potentiel quelconque et en repr\'e9sentation \\begin\{math\}\
+\{|x\\rangle\}\\end\{math\} :\
+\\begin\{equation\}\\label\{schro_indep2\}\
+    \\big[\\frac\{-\\hbar^\{2\}\}\{2m\}\\frac\{d^\{2\}\}\{dx^\{2\}\}+V(x)\\big]\\psi(x) = E\\psi(x)\
+    \\quad\
+    \\Leftrightarrow\
+    \\quad\
+    \\frac\{d^\{2\}\\psi(x)\}\{dx^\{2\}\} = \\frac\{2m\\big(V(x)-E\\big)\}\{\\hbar^\{2\}\}\\psi(x)\
+\\end\{equation\}\
+Pour un oscillateur harmonique :\
+\\begin\{equation\}\\label\{eq_diff1\}\
+\\big[\\frac\{-\\hbar^\{2\}\}\{2m\}\\frac\{d^\{2\}\}\{dx^\{2\}\}+ \\frac\{1\}\{2\}m\\omega^\{2\}x^\{2\}\\big]\\psi(x) = E\\psi(x)\
+\\end\{equation\}\
+On peut montrer que les valeurs de l'\'e9nergie sont discr\'e8tes et s'\'e9crivent :\
+\\begin\{equation\} \\label\{energie_OH\}\
+E_n = (n+\\frac\{1\}\{2\})\\hbar\\omega\
+\\end\{equation\} o\'f9 n est un entier positif ou nul. On introduit aussi les op\'e9rateurs d'\'e9chelle :\
+\\begin\{equation\}\\label\{a1\}\
+    a = \\frac\{1\}\{\\sqrt\{2\}\}(\\hat\{X\} + i\\hat\{P\})\
+    \\quad\
+    et\
+    \\quad\
+    a^\{\\dagger\} = \\frac\{1\}\{\\sqrt\{2\}\}(\\hat\{X\} - i\\hat\{P\})\
+    \\quad \\quad avec \\quad \\left\\\{ \\begin\{array\}\{ll\}\
+    \\hat\{X\} = \\sqrt\{\\frac\{m\\omega\}\{\\hbar\}\}X  \\\\\
+    \\hat\{P\} = \\sqrt\{\\frac\{1\}\{m\\hbar\\omega\}\}P\
+    \\end\{array\}\
+    \\right.\
+\\end\{equation\}\
+$a$ et $a^\{\\dagger\}$ sont respectivement les op\'e9rateurs d'annihilation et de cr\'e9ation. Ils permettent de retirer et d'ajouter la quantit\'e9 $\\hbar\\omega$ \'e0 l'\'e9nergie $E_n$. L'\'e9tat fondamental du syst\'e8me a une \'e9nergie\
+\\begin\{math\}\
+E_0 = \\frac\{1\}\{2\}\\hbar\\omega\
+\\end\{math\}. L'action de $a^\{\\dagger\}$ sur l'\'e9tat quantique fondamental $|\\psi_0\\rangle$ a pour effet de passer de l'\'e9nergie $E_0$ \'e0 l'\'e9nergie $E_1=\\frac\{3\}\{2\}\\hbar\\omega$. L'\'e9nergie ne pouvant par \'eatre inf\'e9rieure \'e0 celle de l'\'e9tat fondamental, l'action de $a$ sur $|\\psi_0\\rangle$ est nulle : $a|\\psi_0\\rangle=0$. Cette cons\'e9quence nous permet de d\'e9duire la fonction d'onde de l'\'e9tat fondamental :\
+\\begin\{equation\} \\label\{a2\}\
+    a|\\psi_0\\rangle = 0\
+\\quad \\Rightarrow \\quad\
+\\frac\{1\}\{\\sqrt\{2\}\}\\big(\\sqrt\{\\frac\{m\\omega\}\{\\hbar\}\}X + \\frac\{i\}\{\\sqrt\{m\\hbar\\omega\}\}P\\big)|\\psi_0\\rangle = 0\
+\\end\{equation\}\
+Ainsi :\
+\\begin\{equation\} \\label\{eq_diff2\}\
+\\big(\\frac\{m\\omega\}\{\\hbar\}x + \\frac\{d\}\{dx\}\\big)\\psi_0(x) = 0\
+\\end\{equation\}\
+Cette \'e9quation a pour solution :\
+\\begin\{math\}\
+\\psi_0(x) = c^\{te\}e^\{-\\frac\{m\\omega x^\{2\}\}\{2\\hbar\}\}\
+\\end\{math\} o\'f9 $c^\{te\}$ est une constante de normalisation. L'action de $a^\{\\dagger\}$ sur cette fonction d'onde nous permet d'obtenir celles des \'e9tats d'\'e9nergie sup\'e9rieure. En r\'e9p\'e9tant l'op\'e9ration $n$ fois, on obtient la fonction d'onde de l'\'e9tat d'\'e9nergie $E_n$ :\
+\\begin\{equation\}\\label\{hermite1\}\
+    \\psi_n(x) = \\big[\\frac\{1\}\{2^\{n\}n!\}\\big(\\frac\{\\hbar\}\{m\\omega\}\\big)^\{n\}\\big]^\{1/2\}\\big(\\frac\{m\\omega\}\{\\pi\\hbar\}\\big)^\{1/4\}\\big[\\frac\{m\\omega\}\{\\hbar\}x-\\frac\{d\}\{dx\}\\big]^\{n\}e^\{\\frac\{-m\\omega x^\{2\}\}\{2\\hbar\}\}\
+\\end\{equation\}\
+Ce sont des polyn\'f4mes d'Hermite. Les fonctions d'onde $\\phi_0$, $\\phi_1$, $\\phi_2$ et $\\phi_3$ sont :\
+\\begin\{equation\}\\label\{hermite2\}\
+    \\begin\{split\}\
+        \\psi_0(x) &= \\big(\\frac\{m\\omega\}\{\\pi\\hbar\}\\big)^\{\\frac\{1\}\{4\}\}e^\{\\frac\{-m\\omega x^\{2\}\}\{2\\hbar\}\} \\\\\
+        \\psi_1(x) &= \\big[\\frac\{4\}\{\\pi\}\\big(\\frac\{m\\omega\}\{\\hbar\}\\big)^\{3\}\\big]^\{\\frac\{1\}\{4\}\}xe^\{\\frac\{-m\\omega x^\{2\}\}\{2\\hbar\}\} \\\\\
+        \\psi_2(x) &= \\big(\\frac\{m\\omega\}\{4\\pi\\hbar\}\\big)^\{\\frac\{1\}\{4\}\} \\big[2\\frac\{m\\omega\}\{\\hbar\}x^\{2\}-1\\big]e^\{\\frac\{-m\\omega x^\{2\}\}\{2\\hbar\}\} \\\\\
+        \\psi_3(x) &= \\frac\{1\}\{\\sqrt\{3\}\}\\big[\\frac\{1\}\{\\pi\}\\big(\\frac\{m\\omega\}\{\\hbar\}\\big)^\{3\}\\big]^\{\\frac\{1\}\{4\}\}\\big[2\\frac\{m\\omega\}\{\\hbar\}x^\{3\}-3x\\big]e^\{\\frac\{-m\\omega x^\{2\}\}\{2\\hbar\}\}\
+    \\end\{split\}\
+\\end\{equation\}\
+         \
+\
+\
+\\section\{Calcul num\'e9rique des fonctions d'onde\}\
+\
+Dans cette section, on s'int\'e9resse au tracer de ces quatre fonctions d'onde ainsi que de leur module carr\'e9. Le programme utilis\'e9 pour g\'e9rer les donn\'e9es est cod\'e9 en C++. $m$, $\\omega$ et $\\hbar$ ont tous \'e9t\'e9 choisis \'e9gaux \'e0 1 et le calcul est effectu\'e9 entre $x=-5$ et $x=+5$ avec un pas de 0,02. Le code calcule dans un premier temps $\\psi_0$ puis \'e9crit la position, l'amplitude de la fonction d'onde et de son module carr\'e9 dans un fichier. Il recommence ensuite l'op\'e9ration avec $\\psi_1$, $\\psi_2$ et $\\psi_3$ pour un total de quatre fichiers. Les donn\'e9es g\'e9n\'e9r\'e9es sont ensuite trait\'e9es dans un programme \'e9crit en Python constistant \'e0 tracer les fonctions d'onde et leur modules carr\'e9 gr\'e2ce \'e0 l'outil Matplotlib.\
+\
+\\subsection\{Tracer des fonctions d'onde et de leurs modules carr\'e9s\}\
+\\begin\{figure\}[H]\
+\\centering\
+\\includegraphics[scale=0.4]\{Graph_tot.eps\}\
+\\caption\{Fonction d'onde (rouge) et module carr\'e9 (vert). On observe que la parti\'e9 de la fonction d'onde correspond \'e0 la parit\'e9 de n.\}\
+\\end\{figure\}\
+\\footnotesize\{Ici ajouter que $\\psi_n$ a n 0 (p.551). Faire le lien entre valeurs notables de $\\psi_n$ et \'e9nergie (p.520) $\\rightarrow E_p=E_c$ croissent avec n (p.523)\}\
+\\normalsize\
+\
+\\subsection\{M\'e9thode Runge-Kutta d'ordre 4\}\
+\
+La m\'e9thode RK4 utilis\'e9e dans ce projet est une adaptation de la m\'e9thode que j'ai cr\'e9\'e9 pour un projet de mod\'e9lisation num\'e9rique en M1. \
+\\subsubsection\{Projet de mod\'e9lisation num\'e9rique M1\}\
+Dans cette section, j'explique comment passer de l'\'e9quation diff\'e9rentielle \'e0 la r\'e9solution num\'e9rique, puis je d\'e9cris le programme en d\'e9tails avec des logigrammes.\
+\\\\\
+\
+\\textbf\{Passage de l'\'e9quation diff\'e9rentielle \'e0 la r\'e9solution num\'e9rique :\}\
+\\\\\
+Reprenons l'\'e9quation (\\ref\{schro_indep2\}) :\
+\\begin\{equation\}\\label\{schro_indep3\}\
+\\frac\{d^\{2\}\\psi(x)\}\{dx^\{2\}\} = \\frac\{2m\\big(V(x)-E\\big)\}\{\\hbar^\{2\}\}\\psi(x)\
+\\end\{equation\}\
+et on pose $k$ le vecteur d'onde :\
+\\begin\{equation\}\\label\{def_k\}\
+    k = \\sqrt\{\\frac\{2m\\big(V(x)-E\\big)\}\{\\hbar^\{2\}\}\}\
+\\end\{equation\}\
+La m\'e9thode Runge-Kutta ne permet pas de r\'e9soudre d'\'e9quation diff\'e9rentielle d'ordre 2. N\'e9anmoins, apr\'e8s quelques manipulation, il est possible de la transformer en deux \'e9quations diff\'e9rentielles coupl\'e9es d'ordre 1. On commence par poser :\
+\\begin\{equation\}\\label\{def_phi\}\
+    \\phi(x) = \\frac\{d\\psi(x)\}\{dx\}\
+\\end\{equation\}\
+Ce qui nous donne :\
+\\begin\{equation\}\
+\\begin\{split\}\
+    \\phi'(x) - k^\{2\}\\psi(x) = 0\
+\\end\{split\}\
+\\end\{equation\}\
+On a ainsi deux \'e9quations diff\'e9rentielles coupl\'e9es d'ordre 1 : \
+\\begin\{equation\}\\label\{couple\}\
+    \\begin\{split\}\
+        \\psi'(x) &= \\phi(x) \\\\\
+        \\phi'(x) &= k^\{2\}\\psi(x)\
+    \\end\{split\}\
+\\end\{equation\}\
+\
+La m\'e9thode Runge-Kutta permet de transformer une \'e9quation diff\'e9rentielle en une suite de terme de la mani\'e8re suivante :\
+\\begin\{equation\}\\label\{suite1\}\
+    \\psi_\{n+1\} = \\psi_n + hp\
+\\end\{equation\}\
+\\begin\{equation\}\
+    x_\{n+1\} = x_n + h\
+\\end\{equation\}\
+o\'f9 $h$ est l'incr\'e9ment de la variable $x$, et o\'f9 $p$ est la pente $\\psi'_n$ de $\\psi_n$ au point $x_n$. Pour la m\'e9thode d'ordre 4 utilis\'e9e dans le programme :\
+\\begin\{equation\}\\label\{suite2\}\
+    \\psi_\{n+1\} = \\psi_n + \\frac\{h\}\{6\}(p_1+2p_2+2p_3+p4) + o(h^5)\
+\\end\{equation\}\
+o\'f9 $p_1$, $p_2$, $p_3$, $p_4$ sont les pentes de $\\psi_n$ calcul\'e9es en diff\'e9rents points. Pour calculer ces pentes, on proc\'e8de de la mani\'e8re suivante :\
+\\begin\{itemize\}\
+    \\item On calcule la pente $p_1$ au point $x_n$\
+    \\item On calcule la pente $p_2$ au point $x + \\frac\{h\}\{2\}$ en utilisant une nouvelle valeur de $\\psi_n$ obtenue gr\'e2ce \'e0 $p_1$  \
+    \\item On calcule la pente $p_3$ au point $x + \\frac\{h\}\{2\}$ une fois encore mais en utilisant cette fois une valeur de $\\psi_n$ obtenue gr\'e2ce \'e0 $p_2$  \
+    \\item On calcule la pente $p_4$ au point $x + h$ en utilisant une valeur de $\\psi_n$ obtenue gr\'e2ce \'e0 $p_3$\
+\\end\{itemize\}\
+Math\'e9matiquement :\
+\\begin\{equation\} \\label\{pentes1\}\
+    \\begin\{split\}\
+        p_1 &= \\psi'_n(x_n, \\psi_n) \\\\\
+        p_2 &= \\psi'_n(x_n+ \\frac\{h\}\{2\}, \\psi_n + \\frac\{h\}\{2\}p_1) \\\\\
+        p_3 &= \\psi'_n(x_n+ \\frac\{h\}\{2\}, \\psi_n + \\frac\{h\}\{2\}p_2) \\\\\
+        p_4 &= \\psi'_n(x_n+ h, \\psi_n + hp_3)\
+    \\end\{split\}\
+\\end\{equation\}\
+Pour calculer une valeur d\'e9finitive pour $\\psi_\{n+1\}$, on voit dans l'\'e9quation (\\ref\{suite2\}) qu'on fait une moyenne pond\'e9r\'e9e des pentes en accordant plus de poids \'e0 celles calcul\'e9es en $\\frac\{h\}\{2\}$.\
+\
+Dans notre cas, nous avons affaire \'e0 deux \'e9quations diff\'e9rentielles coupl\'e9es et il faut ainsi les r\'e9soudre en m\'eame temps. On a donc :\
+\\begin\{equation\}\\label\{suite3\}\
+\\begin\{split\}\
+    \\psi_\{n+1\} &= \\psi_n + \\frac\{h\}\{6\}(p_1+2p_2+2p_3+p4) + o(h^5) \\\\\
+    \\phi_\{n+1\} &= \\phi_n + \\frac\{h\}\{6\}(t_1+2t_2+2t_3+t4) + o(h^5) \
+\\end\{split\}\
+\\end\{equation\}\
+Et les pentes d\'e9pendent les unes des autres. Combiner les \'e9quations (\\ref\{couple\}) et (\\ref\{pentes1\}) permet d'obtenir : \
+\\begin\{equation\}\\label\{pentes2\}\
+    \\begin\{split\}\
+    p_1 &= \\phi_n \\\\\
+    t_1 &= k^2\\psi_n \\\\\
+    p_2 &= \\phi_n + \\frac\{h\}\{2\}t_1 \\\\\
+    t_2 &= k^2(\\psi_n+\\frac\{h\}\{2\}p_1) \\\\\
+    p_3 &= \\phi_n + \\frac\{h\}\{2\}t_2 \\\\\
+    t_3 &= k^2(\\psi_n+\\frac\{h\}\{2\}p_2) \\\\\
+    p_4 &= \\phi_n + ht_3 \\\\\
+    t_4 &= k^2(\\psi_n + hp_3)\
+    \\end\{split\}\
+\\end\{equation\}\
+Ces pentes permettent alors d'effectuer le calcul (\\ref\{suite3\}) pour obtenir les valeurs de $\\psi_\{n+1\}$ et $\\phi_\{n+1\}$ au point $x_\{n+1\}$. On calcule \'e0 nouveaux les pentes au point $x_\{n+1\}$ en rempla\'e7ant $\\psi_n$ et $\\phi_n$ par $\\psi_\{n+1\}$ et $\\phi_\{n+1\}$ obtenues pr\'e9c\'e9demments et on avance au point $x_\{n+2\}$...etc. On note gr\'e2ce \'e0 l'\'e9quation (\\ref\{def_k\}) que le vecteur d'onde, et donc le potentiel, doivent \'eatre recalcul\'e9s \'e0 chaque it\'e9ration en changeant \'e9ventuellement le signe de $k$ selon si $V(x)-E$ est positif ($k$ r\'e9el) ou n\'e9gatif ($k$ imaginaire).\
+\\\\\
+\
+\\textbf\{Le programme en d\'e9tails :\}\
+\\\\\
+Le but de ce projet \'e9tait de cr\'e9er un programme permettant de calculer les coefficients de transmission et de r\'e9fl\'e9xion d'une particule \'e0 travers une barri\'e8re de potentiel. On propage de $+\\infty$ vers $-\\infty$ et on calcule les parties r\'e9elles et imaginaires de $\\psi$ et $\\phi$ ind\'e9pendamment.\
+\
+\\newpage\
+\
+\\begin\{figure\}[H]\
+\\centering\
+\\includegraphics[scale=0.9]\{Logig_initialisation_schrodinger.pdf\}\
+\\caption\{Logigramme de l'initialisation du programme\}\
+\\end\{figure\}\
+\
+\\newpage\
+\
+\\begin\{figure\}[H]\
+\\centering\
+\\includegraphics[scale=0.9]\{Logig_calcul_RT_schrodinger.pdf\}\
+\\caption\{Logigramme du calcul de R et T par le programme\}\
+\\end\{figure\}\
+\
+\\newpage\
+\
+\\begin\{figure\}[H]\
+\\centering\
+\\includegraphics[scale=0.9]\{Logig_RK4_schrodinger.pdf\}\
+\\caption\{Logigramme de la m\'e9thode RK4 utilis\'e9e pour calculer la fonction d'onde. Le pas $h$ est de -0.001 (propagation vers $x$ n\'e9gatifs).\}\
+\\end\{figure\}\
+\
+\\newpage\
+\
+\\textbf\{R\'e9sultats :\} ?\
+\
+\\subsubsection\{Adaptation \'e0 un puits carr\'e9 et \'e0 un oscillateur harmonique\}\
+\\\\\
+\\\\\
+AJOUTER UNE EXPLICATION SUR LES \'c9TATS LI\'c9S + CONDITION AUX LIMITES DE LA F.O.\
+\\\\\
+\
+Pour des \'e9nergies n\'e9gatives, une explosion nulle (une convergence de la fonction d'onde) peut indiquer que l'\'e9nergie est celle d'un \'e9tat propre de l'hamiltonien. J'ai donc cr\'e9\'e9 une fonction effectuant un balayage en \'e9nergie du minimum au maximum du puit et j'ai cherch\'e9 les valeurs absolues minimales de l'explosion de la fonction d'onde en $x=0$ (on rappelle que la propagation se fait de $+\\infty$ vers $-\\infty$). C'est \'e0 dire pour quelles \'e9nergies $|\\psi(0)|$ est minimale.\
+\
+Pour cela, un pas d'incr\'e9mentation est d\'e9termin\'e9 en fonction des \'e9nergies de d\'e9part et d'arriv\'e9e du balayage :\
+\\begin\{equation\}\\label\{balayage\}\
+    Pas = \\frac\{E_\{max\} - E_\{min\}\}\{1000\}\
+\\end\{equation\}\
+On a donc 1000 points pour le balayage.\
+\
+\\newpage\
+\\begin\{figure\}[H]\
+\\centering\
+\\includegraphics[scale=0.85]\{Logig_programme_puits.pdf\}\
+\\caption\{Logigramme du nouveau programme. Le trie et l'affichage de l'\'e9nergie pour le minimum de l'explosion ne sont utiles que pour les affinages des changements de signe (expliqu\'e9 plus loin).\}\
+\\end\{figure\}\
+\\newpage\
+\
+\\textbf\{Puit carr\'e9 :\}\
+\\\\\
+\\\\\
+D\'c9TAILS CONDITIONS INITIALES\
+\\\\\
+\\\\\
+Le potentiel carr\'e9 \'e9tudi\'e9 ici prend la forme :\
+\\begin\{equation\}\\label\{pot_carre\}\
+    V(x) =\
+    \\left\\\{\
+    \\begin\{array\}\{cc\}\
+    \\begin\{split\}\
+         & 0 \\quad si \\quad x<0.5  \\\\\
+         -&3 \\quad si \\quad 0.5\\leq x\\leq5.5 \\\\\
+         & 0 \\quad si \\quad x>5.5  \\\\\
+    \\end\{split\}\
+    \\end\{array\}\
+    \\right.\
+\\end\{equation\}\
+\\begin\{figure\}[H]\
+\\centering\
+\\includegraphics[scale=0.7]\{Graph_puits.pdf\}\
+\\caption\{Forme du puits \'e9tudi\'e9 ici.\}\
+\\end\{figure\}\
+\
+On commence par faire un premier balayage en \'e9nergie de -3 eV \'e0 0 eV (on balaye tout le puits).\
+\
+\\begin\{figure\}[H]\
+\\centering\
+\\includegraphics[scale=0.7]\{Explosion_energie_puits.pdf\}\
+\\caption\{Valeur de $\\psi(0)$ en fonction de l'\'e9nergie pour le potentiel (\\ref\{pot_carre\}).\}\
+\\end\{figure\}\
+\
+En valeur absolue :\
+\\begin\{figure\}[H]\
+\\centering\
+\\includegraphics[scale=0.7]\{Explosion_energie_abs_puits.pdf\}\
+\\caption\{Valeur absolue de $\\psi(0)$ en fonction de l'\'e9nergie pour le potentiel (\\ref\{pot_carre\}).\}\
+\\end\{figure\}\
+\
+Comme on s'y attendait, on voit sur ce graphe que la valeur absolue de l'explosion en $x=0$ diminue brusquement pour certaines valeurs de l'\'e9nergie. Ces diminutions correspondent toutes aux changement de signe de l'explosion. La fonction d\'e9terminant les intervalles d'\'e9nergie dans lesquelles $\\psi(0)$ change de signe nous donne :\
+\\begin\{center\}\
+ \\begin\{tabular\}\{||c | c||\} \
+ \\hline\
+ Energie (eV) & $\\psi(0)$ \\\\ [0.5ex] \
+ \\hline\\hline\
+ -3 & 9.23436x$10^\{-313\}$ \\\\ \
+ \\hline\
+ -2.997 & -10.4924 \\\\\
+ \\hline\
+ -2.925 & -9.00711 \\\\\
+ \\hline\
+ -2.922 & 7.60979 \\\\\
+ \\hline\
+ -2.694 & 16.3943 \\\\ \
+ \\hline\
+ -2.691 & -226.777 \\\\ \
+ \\hline\
+ -2.313 & -256.525 \\\\ \
+ \\hline\
+ -2.31 & 4086.43 \\\\ \
+ \\hline\
+ -1.785 & 54529.6 \\\\\
+ \\hline\
+ -1.782 & -26857.6 \\\\ \
+ \\hline\
+ -1.11 & -925473 \\\\ \
+ \\hline\
+ -1.107 & 646346 \\\\ \
+ \\hline\
+ -0.297 & 2.67906x$10^\{7\}$ \\\\ \
+ \\hline\
+ -0.294 & -2.50448x$10^\{6\}$ \\\\ [1ex] \
+ \\hline\
+\\end\{tabular\}\
+\\end\{center\}\
+On cherche maintenant \'e0 affiner ces intervalles pour d\'e9terminer avec pr\'e9cision les valeurs propres des \'e9tats li\'e9s. Apr\'e8s affinage, on obtient pour le second changement de signe :\
+\\begin\{center\}\
+ \\begin\{tabular\}\{||c | c||\} \
+ \\hline\
+ Energie (eV) & $\\psi(0)$ \\\\ [0.5ex] \
+ \\hline\
+ -2.92334 & -0.0328983 \\\\ \
+ \\hline\
+ -2.92333 & -0.0161811 \\\\\
+ \\hline\
+ -2.92333 & 0.017259 \\\\\
+ \\hline\
+ -2.92333 & 0.017259 \\\\ [1ex]\
+ \\hline\
+\\end\{tabular\}\
+\\end\{center\}\
+On d\'e9termine donc l'\'e9nergie propre suppos\'e9e :\
+\\begin\{equation\} \\label\{Vap1\}\
+    E = -2.92333 \\pm 0.00001 \\quad eV\
+\\end\{equation\}\
+Et on trace la fonction d'onde correspondante :\
+\\begin\{figure\}[H]\
+\\centering\
+\\includegraphics[scale=0.7]\{Graph_E1_puits.pdf\}\
+\\caption\{On voit ici la fonction d'onde obtenue par la m\'e9thode RK4 pour l'\'e9nergie $-2.92333$ eV pr\'e9cis\'e9ment. Elle est align\'e9e avec son \'e9nergie pour des raisons de lisibilit\'e9. On rappelle que le programme ram\'e8ne le maximum (ou le minimum) des fonctions d'onde \'e0 0.25 puis qu'il ajoute son \'e9nergie \'e0 toute la fonction d'onde.\}\
+\\end\{figure\}\
+\
+Il s'agit de l'\'e9tat fondamental de notre syst\'e8me. On r\'e9p\'e8te ces \'e9tapes pour les autres \'e9nergies et on on obtient alors :\
+\
+\\begin\{equation\} \\label\{Vap2\}\
+\\begin\{split\}\
+    E_1 &= -2.92333 \\pm 0.00001 \\quad eV \\\\\
+    E_2 &= -2.69379 \\pm 0.00001 \\quad eV \\\\\
+    E_3 &= -2.31282 \\pm 0.00001 \\quad eV \\\\\
+    E_4 &= -1.78298 \\pm 0.00001 \\quad eV \\\\\
+    E_5 &= -1.10822 \\pm 0.00001 \\quad eV \\\\\
+    E_6 &= -0.294254 \\pm 0.000001 \\quad eV \\\\\
+\\end\{split\}\
+\\end\{equation\}\
+\
+\\begin\{figure\}[H]\
+\\centering\
+\\includegraphics[scale=0.7]\{Graph_total_puits.pdf\}\
+\\caption\{Tracer des 6 \'e9tats li\'e9s avec les \'e9nergies propres d\'e9termin\'e9es pr\'e9c\'e9demment pour le potentiel (\\ref\{pot_carre\}). Les fonctions d'onde ne sont pas l\'e9gend\'e9es pour des raisons de lisibilit\'e9, elles sont toutes align\'e9es sur leur \'e9nergie.\}\
+\\end\{figure\}\
+\
+Les \'e9carts entre niveaux d'\'e9nergie sont :\
+\\begin\{equation\} \\label\{ecarts_1\}\
+    \\begin\{split\}\
+        E_2 - E_1 &= 0.22954 \\pm 0.00002 \\quad eV \\\\\
+        E_3 - E_2 &= 0.38097 \\pm 0.00002 \\quad eV \\\\\
+        E_4 - E_3 &= 0.52984 \\pm 0.00002 \\quad eV \\\\\
+        E_5 - E_4 &= 0.67476 \\pm 0.00002 \\quad eV \\\\\
+        E_6 - E_5 &= 0.813966 \\pm 0.000011 \\quad eV \\\\\
+    \\end\{split\}\
+\\end\{equation\}\
+\
+\\newpage\
+\
+\\textbf\{Potentiel harmonique :\}\
+\\\\\
+Pour nous rapprocher du puits \'e9tudi\'e9 pr\'e9c\'e9demment, le potentiel trait\'e9 ici prend la forme suivante :\
+\\begin\{equation\}\\label\{pot_harmo\}\
+    V(x) = \\frac\{-x^\{2\}\}\{3\} + 2x\
+\\end\{equation\}\
+\\begin\{figure\}[H]\
+\\centering\
+\\includegraphics[scale=0.7]\{Graph_OH.pdf\}\
+\\caption\{Forme de notre oscillateur harmonique. Minimum de $-3$ eV en $x=3$, deux racines en $x=0$ et en $x=6$.\}\
+\\end\{figure\}\
+\
+On effectue un premier balayage de $-3$ \'e0 0 eV et on regarde l'explosion.\
+\
+\\begin\{figure\}[H]\
+\\centering\
+\\includegraphics[scale=0.7]\{Explosion_energie_OH.pdf\}\
+\\caption\{Valeur de $\\psi(0)$ en fonction de l'\'e9nergie pour le potentiel (\\ref\{pot_harmo\}).\}\
+\\end\{figure\}\
+\
+\\begin\{figure\}[H]\
+\\centering\
+\\includegraphics[scale=0.7]\{Explosion_energie_abs_OH.pdf\}\
+\\caption\{Valeur absolue de $\\psi(0)$ en fonction de l'\'e9nergie pour le potentiel (\\ref\{pot_harmo\}).\}\
+\\end\{figure\}\
+\
+Les intervalles d'\'e9nergie dans lesquels $\\psi(0)$ change de signe sont :\
+\\begin\{center\}\
+ \\begin\{tabular\}\{||c | c||\} \
+ \\hline\
+ Energie (eV) & $\\psi(0)$ \\\\ [0.5ex] \
+ \\hline\
+ -3 & 0 \\\\ \
+ \\hline\
+ -2.997 & -1879.25 \\\\\
+ \\hline\
+ -2.721 & -12145.2 \\\\\
+ \\hline\
+ -2.718 & 1931.49 \\\\\
+ \\hline\
+ -2.157 & 147972 \\\\\
+ \\hline\
+ -2.154 & -28019.9 \\\\\
+ \\hline\
+ -1.587 & -605865 \\\\\
+ \\hline\
+ -1.584 & 279478 \\\\\
+ \\hline\
+ -0.996 & 3.55846x$10^\{6\}$ \\\\\
+ \\hline\
+ -0.993 & -655163 \\\\\
+ \\hline\
+ -0.351 & -1.81079x$10^\{7\}$ \\\\\
+ \\hline\
+ -0.348 & 6.21782x$10^\{6\}$ \\\\ [1ex]\
+ \\hline\
+\\end\{tabular\}\
+\\end\{center\}\
+\
+Un premier affinage autour du second changement de signe nous donne les valeurs suivantes\\footnote\{La derni\'e8re d\'e9cimale est manquante pour l'\'e9nergie $-2.7184$ eV. Il s'agit de l'affichage du terminal auquel je n'ai pas touch\'e9. La vraie valeur est $-2.71840$ eV.\} :\
+\\begin\{center\}\
+ \\begin\{tabular\}\{||c | c||\} \
+ \\hline\
+ Energie (eV) & $\\psi(0)$ \\\\ [0.5ex] \
+ \\hline\
+ -2.71841 & -19.2058 \\\\ \
+ \\hline\
+ -2.7184 & -4.90427 \\\\\
+ \\hline\
+ -2.7184 & 9.3979 \\\\\
+ \\hline\
+ -2.7184 & 23.7007 \\\\ [1ex]\
+ \\hline\
+\\end\{tabular\}\
+\\end\{center\}\
+On a l'\'e9nergie du premier changement de signe et on trace la fonction d'onde correspondante :\
+\\begin\{equation\}\\label\{Vap3\}\
+    E = -2.71840 \\pm 0.00001 \\quad eV\
+\\end\{equation\}\
+\
+\\begin\{figure\}[H]\
+\\centering\
+\\includegraphics[scale=0.7]\{Graph_E1_OH.pdf\}\
+\\caption\{Fonction d'onde obtenue pour l'\'e9nergie $-2.71840$ eV pr\'e9cis\'e9ment. Elle est align\'e9e avec son \'e9nergie pour des raisons de lisibilit\'e9.\}\
+\\end\{figure\}\
+\
+Des affinages successifs du balayage nous permettent de d\'e9terminer les \'e9nergies suivantes et de tracers les fonctions d'onde correspondantes :\
+\\begin\{equation\} \\label\{Vap4\}\
+\\begin\{split\}\
+    E_1 &= -2.71840 \\pm 0.00001 \\quad eV \\\\\
+    E_2 &= -2.15447 \\pm 0.00001 \\quad eV \\\\\
+    E_3 &= -1.58494 \\pm 0.00001 \\quad eV \\\\\
+    E_4 &= -0.993463 \\pm 0.000001 \\quad eV \\\\\
+    E_5 &= -0.348762 \\pm 0.000001 \\quad eV \\\\\
+\\end\{split\}\
+\\end\{equation\}\
+\\begin\{figure\}[H]\
+\\centering\
+\\includegraphics[scale=0.7]\{Graph_total_OH.pdf\}\
+\\caption\{Tracer des 5 \'e9tats li\'e9s avec les \'e9nergies propres d\'e9termin\'e9es pr\'e9c\'e9demment pour le potentiel (\\ref\{pot_harmo\}).\}\
+\\end\{figure\}\
+\
+Les \'e9carts entres les niveaux successifs sont :\
+\\begin\{equation\} \\label\{ecarts_2\}\
+    \\begin\{split\}\
+        E_2 - E_1 &= 0.56393 \\pm 0.00002 \\quad eV \\\\\
+        E_3 - E_2 &= 0.56953 \\pm 0.00002 \\quad eV \\\\\
+        E_4 - E_3 &= 0.591477 \\pm 0.000011 \\quad eV \\\\\
+        E_5 - E_4 &= 0.644701 \\pm 0.000002 \\quad eV\
+    \\end\{split\}\
+\\end\{equation\}\
+L'augmentation de l'\'e9cart est significative en comparaison de la pr\'e9diction (\\ref\{energie_OH\}) selon laquelle l'\'e9cart entre deux valeurs de l'\'e9nergie dans le spectre de l'oscillateur harmonique est constant ($\\hbar\\omega$).\
+\
+\
+\
+\
+\
+\\newpage\
+\\subsubsection\{\'c9tats non-li\'e9s, ph\'e9nom\'e8nes de r\'e9sonance\}\
+\
+On effectue maintenant le balayage de 0 eV \'e0 +3 eV au dessus du potentiel (\\ref\{pot_carre\}).\
+\
+\\begin\{figure\}[H]\
+\\centering\
+\\includegraphics[scale=0.7]\{Explosion_energie_4.eps\}\
+\\caption\{Valeur absolue de l'explosion en fonction de l'\'e9nergie pour le potentiel (\\ref\{pot_carre\}). On balaye de 0 \'e0 +3eV. On observe l\'e0 encore des chutes brusques de l'explosion pour certaines valeurs de l'\'e9nergie. ANTI-R\'c9SONANCE ?\}\
+\\end\{figure\}\
+\
+On observe l\'e0 encore de brusques chutes dans l'explosion en $x=0$. Le premier balayage nous donne les intervalles suivants :\
+\\begin\{center\}\
+ \\begin\{tabular\}\{||c | c||\} \
+ \\hline\
+ Energie (eV) & $\\psi(0)$ \\\\ [0.5ex] \
+ \\hline\
+ 0.651 & -1.5618x$10^\{7\}$ \\\\ \
+ \\hline\
+ 0.654 & 5.18651x$10^\{8\}$ \\\\\
+ \\hline\
+ 1.716 & 4.90288x$10^\{9\}$ \\\\\
+ \\hline\
+ 1.719 & -4.08953x$10^\{9\}$ \\\\\
+ \\hline\
+ 2.892 & -7.59726x$10^\{10\}$ \\\\\
+ \\hline\
+ 2.895 & 6.85421x$10^\{10\}$ \\\\ [1ex]\
+ \\hline\
+\\end\{tabular\}\
+\\end\{center\}\
+L'affinage de ces \'e9nergies nous donne les valeurs suivantes : \
+\\begin\{equation\} \\label\{Vap_reso_carre\}\
+\\begin\{split\}\
+    E_1 &= 0.651088 \\pm 0.000001 \\quad eV \\\\\
+    E_2 &= 1.71764 \\pm 0.00001 \\quad eV \\\\\
+    E_3 &= 2.89358 \\pm 0.00001 \\quad eV \\\\\
+\\end\{split\}\
+\\end\{equation\}\
+On trace les fonctions d'ondes pour ces \'e9nergies :\
+\\begin\{figure\}[H]\
+\\centering\
+\\includegraphics[scale=0.7]\{Graph_total_puits_resonance.pdf\}\
+\\caption\{L\'e0 encore, les fonctions d'onde ne sont pas l\'e9gend\'e9es, elles sont align\'e9es sur leurs \'e9nergies. ANTI-R\'c9SONANCE ?\}\
+\\end\{figure\}\
+\
+Les \'e9carts entre niveaux successifs sont :\
+\\begin\{equation\} \\label\{ecarts_reso_carre\}\
+    \\begin\{split\}\
+        E_2 - E_1 &= 1.066552 \\pm 0.000011 \\quad eV \\\\\
+        E_3 - E_2 &= 1.17594 \\pm 0.00002 \\quad eV\
+    \\end\{split\}\
+\\end\{equation\}\
+\
+On refait le m\'eame balayage de 0 \'e0 +3 eV mais cette fois au dessus du potentiel harmonique (\\ref\{pot_harmo\}).\
+\
+\\begin\{figure\}[H]\
+\\centering\
+\\includegraphics[scale=0.7]\{Explosion_energie_OH_resonance.pdf\}\
+\\caption\{Valeur absolue de l'explosion en fonction de l'\'e9nergie pour le potentiel (\\ref\{pot_carre\}). On balaye de 0 \'e0 +3eV. On observe l\'e0 encore des chutes brusques de l'explosion pour certaines valeurs de l'\'e9nergie. ANTI-R\'c9SONANCE ?\}\
+\\end\{figure\}\
+\\begin\{figure\}[H]\
+\\centering\
+\\includegraphics[scale=0.7]\{Explosion_energie_abs_OH_resonance.pdf\}\
+\\caption\{Valeur absolue de l'explosion en fonction de l'\'e9nergie pour le potentiel (\\ref\{pot_carre\}). On balaye de 0 \'e0 +3eV. On observe l\'e0 encore des chutes brusques de l'explosion pour certaines valeurs de l'\'e9nergie. ANTI-R\'c9SONANCE ?\}\
+\\end\{figure\}\
+\
+Le premier balayage nous donne les intervalles suivants :\
+\\begin\{center\}\
+ \\begin\{tabular\}\{||c | c||\} \
+ \\hline\
+ Energie (eV) & $\\psi(0)$ \\\\ [0.5ex] \
+ \\hline\
+ 0.384 & 4.48584x$10^\{7\}$ \\\\\
+ \\hline\
+ 0.387 & 1.40469x$10^\{8\}$ \\\\\
+ \\hline\
+ 1.23 & -1.35319x$10^\{9\}$ \\\\\
+ \\hline\
+ 1.233 & 4.38442x$10^\{8\}$ \\\\ \
+ \\hline\
+ 2.205 & 5.77642x$10^\{9\}$ \\\\ \
+ \\hline\
+ 2.208 & -1.5672x$10^\{10\}$ \\\\ [1ex]\
+ \\hline\
+\\end\{tabular\}\
+\\end\{center\}\
+L'affinage de ces \'e9nergies nous donne les valeurs suivantes : \
+\\begin\{equation\} \\label\{Vap_reso_harmo\}\
+\\begin\{split\}\
+    E_1 &= 0.384731 \\pm 0.000001 \\quad eV \\\\\
+    E_2 &= 1.23227 \\pm 0.00001 \\quad eV \\\\\
+    E_3 &= 2.20581 \\pm 0.00001 \\quad eV \\\\\
+\\end\{split\}\
+\\end\{equation\}\
+On trace les fonctions d'ondes pour ces \'e9nergies :\
+\\begin\{figure\}[H]\
+\\centering\
+\\includegraphics[scale=0.7]\{Graph_total_OH_resonance.pdf\}\
+\\caption\{ANTI-R\'c9SONANCE ?\}\
+\\end\{figure\}\
+\
+Les \'e9carts entre niveaux successifs sont :\
+\\begin\{equation\} \\label\{ecarts_reso_harmo\}\
+    \\begin\{split\}\
+        E_2 - E_1 &= 0.847539 \\pm 0.000011 \\quad eV \\\\\
+        E_3 - E_2 &= 0.97354 \\pm 0.00002 \\quad eV\
+    \\end\{split\}\
+\\end\{equation\}\
+\
+\
+\\subsection\{R\'e9seaux de neurones\}\
+\
+\\begin\{figure\}[H]\
+\\centering\
+\\includegraphics[scale=0.7]\{Neurone.pdf\}\
+\\caption\{Repr\'e9sentation d'un r\'e9seau \'e0 un neurone classant des formes (input) dans deux cat\'e9gories (output) : "rond" ou "autre". Le neurone d\'e9termine un "pourcentage de ressemblance" et, lorsqu'il d\'e9passe 50, le neurone s'allume. En dessous de 50$\\%$ le neurone reste \'e9teint et un choix par d\'e9faut est effectu\'e9. \\textbf\{Attention, cette repr\'e9sentation est simpliste au sens o\'f9 un tel r\'e9seau n\'e9cessiterait plusieurs neurones, elle ne sert qu'\'e0 saisir l'id\'e9e g\'e9n\'e9rale\}.\}\
+\\end\{figure\}\
+Le manque de choix en sortie rend ce "r\'e9seau" assez limit\'e9 en apparence, mais il permet de r\'e9pondre ais\'e9ment \'e0 un besoin de classification binaire. Nous verrons plus loins qu'un tel r\'e9seau peut nous aider \'e0 approximer des fonctions.\
+\\begin\{comment\}\
+Cette limitation peut-\'eatre compens\'e9e par un r\'e9seau \'e0 plusieurs neurones dont chacun se verrait attribu\'e9 la reconnaissance d'une forme. Toutes les estimations sont ensuite \'e9valu\'e9es par l'ordinateur et un choix est effectu\'e9 : rond, carr\'e9, triangle...etc. \
+\\end\{comment\}\
+\
+\\subsubsection\{R\'e9gression logistique\}\
+\
+Il est montr\'e9 dans le tutoriel \\textit\{"Le r\'e9seau \'e0 un neurone: r\'e9gression logistique"\} de Colin Bernet \\cite\{regression\} qu'un r\'e9seau \'e0 un seul neurone est \'e9quivalent \'e0 une r\'e9gression logistique.\
+\\\\\
+\\\\\
+Les \'e9tapes du tuto :\
+\\begin\{itemize\}\
+    \\item On g\'e9n\'e8re une distribution normale (centr\'e9e et $\\sigma$ = 1) \\\\\
+    \\item On g\'e9n\'e8re deux s\'e9ries de nombres al\'e9atoires selon cette loi. La premi\'e8re s\'e9rie sera centr\'e9e sur -1.5, la seconde sur 1.5. \\\\\
+    \\item On cr\'e9e une "carte d'identit\'e9" ce ces deux s\'e9ries. La premi\'e8re prend l'identit\'e9 "0", la seconde l'identit\'e9 "1".\\\\\
+\\end\{itemize\}\
+\
+Une fonction d'activation, comme son nom l'indique, active ou non le neurone pour une entr\'e9e donn\'e9e. Dans notre premi\'e8re figure, on peut imaginer la fonction d'activation du neurone comme une fonction de Heaviside : au del\'e0 d'un taux de ressemblance pr\'e9cis (0.5), le neurone s'active. La fonction d'activation la plus commune est la fonction sigmo\'efde : \
+\\begin\{equation\}\\label\{sigmoid1\}\
+    f(z) = \\frac\{1\}\{1+e^\{-z\}\}\
+\\end\{equation\}\
+$z$ peut \'eatre r\'e9\'e9crit :\
+\\begin\{equation\} \\label\{sigmoid2\}\
+    z = wx + b\
+\\end\{equation\}\
+o\'f9 $w$ est le poids de la variable $x$ et $b$ le biais.\
+\\begin\{figure\}[H]\
+\\centering\
+\\includegraphics[scale=0.7]\{sigmoid_1.pdf\}\
+\\caption\{Fonction sigmo\'efde de biais 0 et de poids 1. Le neurone est activ\'e9 si $f(z)>0.5$. C'est \'e0 dire si $x>0$.\}\
+\\end\{figure\}\
+\
+\\begin\{figure\}[H]\
+\\centering\
+\\includegraphics[scale=0.4]\{sigmoid_2.pdf\}\
+\\caption\{Fonction sigmo\'efde de biais 0 et de poids 3.\}\
+\\end\{figure\}\
+\\begin\{figure\}[H]\
+\\centering\
+\\includegraphics[scale=0.4]\{sigmoid_3.pdf\}\
+\\caption\{Fonction sigmo\'efde de biais 2 et de poids 1.\}\
+\\end\{figure\}\
+\
+Pour une entr\'e9e $x$, le neurone renvoie la valeur de $z$ d\'e9termin\'e9e par les param\'e8tres $w$ et $b$. Ce param\'e8tres permet d'\'e9valuer $f(z)$ qui nous donnera le "taux d'activation" du neurone. Il reste donc \'e0 d\'e9terminer quels sont les bons param\'e8tres $w$ et $b$ de notre sigmo\'efde. Pour \'e7a, il faut entrainer le r\'e9seau sur un \'e9chantillon connu.\
+\
+Une fois l'entrainement effectu\'e9, on peut tester le r\'e9seau sur un nouvel \'e9chantillon (connu de l'utilisateur mais pas du r\'e9seau) pour d\'e9terminer la pr\'e9cision de la classification \\cite\{numpy\} :\
+\\begin\{equation\}\
+    a = 1 - \\frac\{M\}\{N\}\
+\\end\{equation\}\
+o\'f9 $a$ signifie "accuracy", M est le nombre d'\'e9l\'e9ments mal class\'e9s et N le nombre total d'\'e9l\'e9ments dans l'\'e9chantillon. Ce param\'e8tre doit tendre vers 1 dans l'id\'e9al.\
+\
+\\subsubsection\{Th\'e9or\'e8me d'approximation universelle\}\
+Selon ce th\'e9or\'e8me\\footnote\{\\cite\{representation2\}\}, un r\'e9seau de neurones \'e0 propagation avant (sans boucle) ayant une seule couche cach\'e9e et contenant un nombre fini de neurones peut approximer toute fonction continue \'e0 support compact de \\begin\{math\}\
+\\mathbb\{R\}^n\
+\\end\{math\}. Notre but, dans un premier temps, est d'illustrer ce th\'e9or\'e8me \\cite\{representation1\} en approximant une fonction gaussienne.\
+\
+\\subsubsection\{Premier exemple : fit d'une gaussienne, illustration du th\'e9or\'e8me d'approximation universelle\}\
+\
+\\begin\{figure\}[H]\
+\\centering\
+\\includegraphics[scale=0.7]\{Norm_10001-20-20-1.pdf\}\
+\\caption\{Fit d'une gaussienne. 10001 points, 20, 20, 1. Total params: 481\
+Trainable params: 481\}\
+\\end\{figure\}\
+\\begin\{figure\}[H]\
+\\centering\
+\\includegraphics[scale=0.7]\{Norm_10001-200-200-1.pdf\}\
+\\caption\{Fit d'une gaussienne. 10001 points, 200, 200, 1. Total params: 40,801\
+Trainable params: 40,801\}\
+\\end\{figure\}\
+\\begin\{figure\}[H]\
+\\centering\
+\\includegraphics[scale=0.7]\{Norm_10001-400-400-1.pdf\}\
+\\caption\{Fit d'une gaussienne. 10001 points, 400, 400, 1. Total params: 161,601\
+Trainable params: 161,601\}\
+\\end\{figure\}\
+\\begin\{figure\}[H]\
+\\centering\
+\\includegraphics[scale=0.7]\{Norm_10001-200-20-1.pdf\}\
+\\caption\{Fit d'une gaussienne. 10001 points, 200, 20, 1. Total params: 4,441\
+Trainable params: 4,441\}\
+\\end\{figure\}\
+\\begin\{figure\}[H]\
+\\centering\
+\\includegraphics[scale=0.7]\{Norm_10001-20-200-1.pdf\}\
+\\caption\{Fit d'une gaussienne. 10001 points, 20, 200, 1. Total params: 4,441\
+Trainable params: 4,441\}\
+\\end\{figure\}\
+\
+\\ref\{approx_module_hermite_500\} On voit en annexe que, pour un m\'eame r\'e9seau et un \'e9chantillon de 500 points, l'approximation d'une fonction d'onde semble plus pr\'e9cise que l'approximation du module carr\'e9. Cette diff\'e9rence est plus difficile \'e0 d\'e9tecter pour un \'e9chantillon \'e0 10001 points.\
+\
+M\'e9mo :\
+\\cite\{un_neurone\}\
+\\cite\{regression\}\
+\\cite\{keras\}\
+\\cite\{overfitting\}\
+\\cite\{numpy\}\
+\\cite\{matplot\}\
+\\cite\{digit\}\
+\\cite\{python\}\
+\
+\\clearpage\
+\\addcontentsline\{toc\}\{section\}\{Bibliographie\}\
+\
+\\printbibliography[title=\{Bibliographie\}\
+]\
+\
+\
+\\begin\{appendices\}\
+    \\section\{Approximation des pol. d'Hermite par r\'e9seau de neurones (500 points)\}\
+    \\label\{approx_fct_hermite_500\}\
+    \\begin\{center\}\
+    \\begin\{figure\}[H]\
+        \\includegraphics[scale=0.7]\{n0_fct_20-20-1.pdf\}\
+        \\caption\{n=0, 500 points. R\'e9seau 20 20 1. Params : 481. Trainable : 481.\}\
+    \\end\{figure\}\
+    \
+    \\begin\{figure\}[H]\
+        \\includegraphics[scale=0.7]\{n0_fct_200-200-1.pdf\}\\caption\{n=0, 500 points. R\'e9seau 200 200 1. Params: 40801. Trainable : 40801.\}\
+    \\end\{figure\}\
+    \
+    \\begin\{figure\}[H]\
+        \\includegraphics[scale=0.7]\{n1_fct_20-20-1.pdf\}\\caption\{n=1, 500 points. R\'e9seau 20 20 1. Params : 481. Trainable : 481.\}\
+    \\end\{figure\}\
+    \
+    \\begin\{figure\}[H]\
+        \\includegraphics[scale=0.7]\{n1_fct_200-200-1.pdf\}\\caption\{n=1, 500 points. R\'e9seau 200 200 1. Params: 40801. Trainable : 40801.\}\
+    \\end\{figure\}\
+    \
+    \\begin\{figure\}[H]\
+        \\includegraphics[scale=0.7]\{n2_fct_20-20-1.pdf\}\\caption\{n=2, 500 points. R\'e9seau 20 20 1. Params : 481. Trainable : 481.\}\
+    \\end\{figure\}\
+    \
+    \\begin\{figure\}[H]\
+        \\includegraphics[scale=0.7]\{n2_fct_200-200-1.pdf\}\\caption\{n=2, 500 points. R\'e9seau 200 200 1. Params: 40801. Trainable : 40801.\}\
+    \\end\{figure\}\
+    \
+    \\begin\{figure\}[H]\
+        \\includegraphics[scale=0.7]\{n3_fct_20-20-1.pdf\}\\caption\{n=3, 500 points. R\'e9seau 20 20 1. Params : 481. Trainable : 481.\}\
+    \\end\{figure\}\
+    \
+    \\begin\{figure\}[H]\
+        \\includegraphics[scale=0.7]\{n3_fct_200-200-1.pdf\}\\caption\{n=3, 500 points. R\'e9seau 200 200 1. Params: 40801. Trainable : 40801.\}\
+    \\end\{figure\}\
+    \\end\{center\}\
+    \
+    \
+    \
+    \
+    \\section\{Approximation des modules carr\'e9s des pol. d'Hermite par r\'e9seau de neurones (500 points)\}\
+    \\label\{approx_module_hermite_500\}\
+    \\begin\{center\}\
+    \
+    \\begin\{figure\}[H]\
+        \\includegraphics[scale=0.7]\{n0_mod_20-20-1.pdf\}\\caption\{n=0, 500 points. R\'e9seau 20 20 1. Params : 481. Trainable : 481.\}\
+    \\end\{figure\}\
+    \
+    \\begin\{figure\}[H]\
+        \\includegraphics[scale=0.7]\{n0_mod_200-200-1.pdf\}\
+        \\caption\{n=0, 500 points. R\'e9seau 200 200 1. Params: 40801. Trainable : 40801.\}\
+    \\end\{figure\}\
+    \
+    \\begin\{figure\}[H]\
+        \\includegraphics[scale=0.7]\{n1_mod_20-20-1.pdf\}\\caption\{n=1, 500 points. R\'e9seau 20 20 1. Params : 481. Trainable : 481.\}\
+    \\end\{figure\}\
+    \
+    \\begin\{figure\}[H]\
+        \\includegraphics[scale=0.7]\{n1_mod_200-200-1.pdf\}\
+        \\caption\{n=1, 500 points. R\'e9seau 200 200 1. Params: 40801. Trainable : 40801.\}\
+    \\end\{figure\}\
+    \
+    \\begin\{figure\}[H]\
+        \\includegraphics[scale=0.7]\{n2_mod_20-20-1.pdf\}\\caption\{n=2, 500 points. R\'e9seau 20 20 1. Params : 481. Trainable : 481.\}\
+    \\end\{figure\}\
+    \
+    \\begin\{figure\}[H]\
+        \\includegraphics[scale=0.7]\{n2_mod_200-200-1.pdf\}\
+        \\caption\{n=2, 500 points. R\'e9seau 200 200 1. Params: 40801. Trainable : 40801.\}\
+    \\end\{figure\}\
+    \
+    \\begin\{figure\}[H]\
+        \\includegraphics[scale=0.7]\{n3_mod_20-20-1.pdf\}\\caption\{n=3, 500 points. R\'e9seau 20 20 1. Params : 481. Trainable : 481.\}\
+    \\end\{figure\}\
+    \
+    \\begin\{figure\}[H]\
+        \\includegraphics[scale=0.7]\{n3_mod_200-200-1.pdf\}\
+        \\caption\{n=3, 500 points. R\'e9seau 200 200 1. Params: 40801. Trainable : 40801.\}\
+    \\end\{figure\}\
+    \\end\{center\}\
+    \
+    \
+    \
+    \
+    \\section\{Approximation des pol. d'Hermite par r\'e9seau de neurones (10001 pts)\}\
+    \\label\{approx_fct_hermite_10001\}\
+    \\begin\{center\}\
+    \
+    \\begin\{figure\}[H]\
+        \\includegraphics[scale=0.7]\{n0_fct_10001_20-20-1.pdf\}\\caption\{n=0, 10001 pts. R\'e9seau 20 20 1. Params : 481. Trainable : 481.\}\
+    \\end\{figure\}\
+    \
+    \\begin\{figure\}[H]\
+        \\includegraphics[scale=0.7]\{n0_fct_10001_200-200-1.pdf\}\
+        \\caption\{n=0, 10001 pts. R\'e9seau 200 200 1. Params: 40801. Trainable : 40801.\}\
+    \\end\{figure\}\
+    \
+    \\begin\{figure\}[H]\
+        \\includegraphics[scale=0.7]\{n1_fct_10001_20-20-1.pdf\}\
+        \\caption\{n=1, 10001 pts. R\'e9seau 20 20 1. Params : 481. Trainable : 481.\}\
+    \\end\{figure\}\
+    \
+    \\begin\{figure\}[H]\
+        \\includegraphics[scale=0.7]\{n1_fct_10001_200-200-1.pdf\}\
+        \\caption\{n=1, 10001 pts. R\'e9seau 200 200 1. Params: 40801. Trainable : 40801.\}\
+    \\end\{figure\}\
+    \
+    \\begin\{figure\}[H]\
+        \\includegraphics[scale=0.7]\{n2_fct_10001_20-20-1.pdf\}\
+        \\caption\{n=2, 10001 pts. R\'e9seau 20 20 1. Params : 481. Trainable : 481.\}\
+    \\end\{figure\}\
+    \
+    \\begin\{figure\}[H]\
+        \\includegraphics[scale=0.7]\{n2_fct_10001_200-200-1.pdf\}\\caption\{n=2, 10001 pts. R\'e9seau 200 200 1. Params: 40801. Trainable : 40801.\}\
+    \\end\{figure\}\
+    \
+    \\begin\{figure\}[H]\
+        \\includegraphics[scale=0.7]\{n3_fct_10001_20-20-1.pdf\}\
+        \\caption\{n=3, 10001 pts. R\'e9seau 20 20 1. Params : 481. Trainable : 481.\}\
+    \\end\{figure\}\
+    \
+    \\begin\{figure\}[H]\
+        \\includegraphics[scale=0.7]\{n3_fct_10001_200-200-1.pdf\}\
+        \\caption\{n=3, 10001 pts. R\'e9seau 200 200 1. Params: 40801. Trainable : 40801.\}\
+    \\end\{figure\}\
+    \\end\{center\}\
+    \
+    \
+    \
+    \
+    \\section\{Approximation des modules carr\'e9s des pol. d'Hermite par r\'e9seau de neurones (10001 pts)\}\
+    \\label\{approx_module_hermite_10001\}\
+    \\begin\{center\}\
+    \\begin\{figure\}[H]\
+        \\includegraphics[scale=0.7]\{n0_mod_10001_20-20-1.pdf\}\
+        \\caption\{n=0, 10001 pts. R\'e9seau 20 20 1. Params : 481. Trainable : 481.\}\
+    \\end\{figure\}\
+    \
+    \\begin\{figure\}[H]\
+        \\includegraphics[scale=0.7]\{n0_mod_10001_200-200-1.pdf\}\
+        \\caption\{n=0, 10001 pts. R\'e9seau 200 200 1. Params: 40801. Trainable : 40801.\}\
+        \\end\{figure\}\
+    \
+    \\begin\{figure\}[H]\
+        \\includegraphics[scale=0.7]\{n1_mod_10001_20-20-1.pdf\}\
+        \\caption\{n=1, 10001 pts. R\'e9seau 20 20 1. Params : 481. Trainable : 481.\}\
+    \\end\{figure\}\
+    \
+    \\begin\{figure\}[H]\
+        \\includegraphics[scale=0.7]\{n1_mod_10001_200-200-1.pdf\}\
+        \\caption\{n=1, 10001 pts. R\'e9seau 200 200 1. Params: 40801. Trainable : 40801.\}\
+    \\end\{figure\}\
+    \
+    \\begin\{figure\}[H]\
+        \\includegraphics[scale=0.7]\{n2_mod_10001_20-20-1.pdf\}\
+        \\caption\{n=2, 10001 pts. R\'e9seau 20 20 1. Params : 481. Trainable : 481.\}\
+    \\end\{figure\}\
+    \
+    \\begin\{figure\}[H]\
+        \\includegraphics[scale=0.7]\{n2_mod_10001_200-200-1.pdf\}\
+        \\caption\{n=2, 10001 pts. R\'e9seau 200 200 1. Params: 40801. Trainable : 40801.\}\
+    \\end\{figure\}\
+    \
+    \\begin\{figure\}[H]\
+        \\includegraphics[scale=0.7]\{n3_mod_10001_20-20-1.pdf\}\
+        \\caption\{n=3, 10001 pts. R\'e9seau 20 20 1. Params : 481. Trainable : 481.\}\
+    \\end\{figure\}\
+    \
+    \\begin\{figure\}[H]\
+        \\includegraphics[scale=0.7]\{n3_mod_10001_200-200-1.pdf\}\
+        \\caption\{n=3, 10001 pts. R\'e9seau 200 200 1. Params: 40801. Trainable : 40801.\}\
+    \\end\{figure\}\
+    \\end\{center\}\
+    \
+    \
+\\end\{appendices\}\
+\
+\\end\{document\}\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\\begin\{equation\}\
+\\begin\{split\}\
+    \\psi_\{n+1\} = \\psi_n + P \\\\\
+    \\phi_\{n+1\} = \\phi_n + T \\\\\
+\\end\{split\}\
+\\end\{equation\}\
+\
+\
+\\begin\{figure\}[H]\
+\\centering\
+\\includegraphics[scale=0.26]\{fct_onde_barriere_carree_2.eps\}\
+\\caption\{En bleu, la partie r\'e9elle et en rouge la partie imaginaire de la fonction d'onde traversant une barri\'e8re carr\'e9e de 4 eV.\}\
+\\end\{figure\}}
